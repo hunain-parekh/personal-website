@@ -4,10 +4,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { value: "60%", label: "Faster APIs", desc: "Architecture redesign results" },
-  { value: "85%+", label: "Test Coverage", desc: "Across production codebases" },
-  { value: "20+", label: "Projects Shipped", desc: "On time & within budget" },
-  { value: "24h", label: "Response Time", desc: "Get back to you fast" },
+  { value: "5+", label: "Years Experience", desc: "Software Engineering" },
+  { value: "5", label: "Companies", desc: "Diverse industry experience" },
+  { value: "50+", label: "Projects Shipped", desc: "On time & within budget" },
+  { value: "6h", label: "Response Time", desc: "Get back to you fast" },
 ];
 
 export default function HireMe() {
@@ -45,7 +45,7 @@ export default function HireMe() {
         {/* Bottom border glow line */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent opacity-40" />
 
-        <div className="max-w-6xl mx-auto relative">
+        <div className="max-w-7xl mx-auto relative">
           {/* Main headline */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -81,7 +81,7 @@ export default function HireMe() {
           >
             I&apos;m a Senior Software Engineer who turns complex problems into elegant
             solutions. Whether you need a full-stack application, API architecture,
-            or technical leadership — I deliver results.
+            or cloud integrations — I deliver results.
           </motion.p>
 
           {/* Stats row */}
@@ -148,7 +148,7 @@ export default function HireMe() {
             </a>
 
             <a
-              href="mailto:hunain@example.com"
+              href="mailto:hunain.parekh@hotmail.com"
               className="group inline-flex items-center gap-3 px-10 py-5 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm tracking-widest uppercase hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all duration-300"
               style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem" }}
             >

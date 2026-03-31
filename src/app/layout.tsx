@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     "Node.js",
     "Portfolio",
   ],
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "Hunain Parekh — Senior Software Engineer",
     description:

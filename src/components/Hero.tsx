@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import HeroPortrait from "./HeroPortrait";
+import { SiMongodb, SiReact, SiNodedotjs, SiTypescript, SiNestjs, SiNextdotjs } from "react-icons/si";
 
 function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
   const [displayed, setDisplayed] = useState("");
@@ -34,118 +35,15 @@ function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
   );
 }
 
-function FloatingCodeBlock() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9, y: 30 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 1, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative w-full max-w-md"
-    >
-      {/* Main floating terminal */}
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        className="relative border border-[var(--color-border)] bg-[var(--color-bg-elevated)]/90 backdrop-blur-sm p-5 shadow-2xl"
-        style={{ boxShadow: "0 25px 80px rgba(0,0,0,0.6), 0 0 60px var(--color-accent-glow)" }}
-      >
-        <div className="flex gap-1.5 mb-4">
-          <div className="w-2 h-2 rounded-full bg-[#ff5f57]" />
-          <div className="w-2 h-2 rounded-full bg-[#febc2e]" />
-          <div className="w-2 h-2 rounded-full bg-[#28c840]" />
-        </div>
-        <div
-          className="text-[11px] leading-[1.8] text-[var(--color-text-muted)]"
-          style={{ fontFamily: "var(--font-mono)" }}
-        >
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.0 }}>
-            <span className="text-[#c678dd]">import</span>{" "}
-            <span className="text-[var(--color-text)]">{"{ passion }"}</span>{" "}
-            <span className="text-[#c678dd]">from</span>{" "}
-            <span className="text-green-400">&apos;developer&apos;</span>;
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.2 }}>
-            <span className="text-[#c678dd]">import</span>{" "}
-            <span className="text-[var(--color-text)]">{"{ creativity }"}</span>{" "}
-            <span className="text-[#c678dd]">from</span>{" "}
-            <span className="text-green-400">&apos;engineer&apos;</span>;
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.4 }}>
-            <br />
-            <span className="text-[var(--color-accent)]">const</span>{" "}
-            <span className="text-[#61afef]">buildSomething</span> ={" "}
-            <span className="text-[#c678dd]">async</span> () =&gt; {"{"}
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.6 }}>
-            <span className="text-[var(--color-text-dim)]">{"  "}</span>
-            <span className="text-[#c678dd]">const</span> result ={" "}
-            <span className="text-[#c678dd]">await</span>{" "}
-            <span className="text-[#61afef]">combine</span>(
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.8 }}>
-            <span className="text-[var(--color-text-dim)]">{"    "}</span>
-            passion, creativity
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.0 }}>
-            <span className="text-[var(--color-text-dim)]">{"  "}</span>);
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.2 }}>
-            <span className="text-[var(--color-text-dim)]">{"  "}</span>
-            <span className="text-[#c678dd]">return</span>{" "}
-            <span className="text-[var(--color-accent)]">result</span>;{" "}
-            <span className="text-[var(--color-text-dim)]">// magic</span>
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.4 }}>
-            {"}"};
-          </motion.div>
-        </div>
-        {/* Corner accents */}
-        <div className="absolute top-0 right-0 w-6 h-6 border-t border-r border-[var(--color-accent)] opacity-30" />
-        <div className="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-[var(--color-accent)] opacity-30" />
-      </motion.div>
-
-      {/* Floating accent card behind */}
-      <motion.div
-        animate={{ y: [0, -12, 0], rotate: [1, -1, 1] }}
-        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-        className="absolute -top-4 -right-4 w-24 h-24 border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/5 -z-10"
-      />
-
-      {/* Orbiting dots */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-        className="absolute -top-8 -left-8 w-[calc(100%+64px)] h-[calc(100%+64px)]"
-      >
-        <div className="absolute top-0 left-1/2 w-1.5 h-1.5 bg-[var(--color-accent)] rounded-full opacity-40" />
-        <div className="absolute bottom-0 right-1/4 w-1 h-1 bg-[var(--color-accent-bright)] rounded-full opacity-30" />
-      </motion.div>
-
-      {/* Status line */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 3.6, duration: 0.5 }}
-        className="absolute -bottom-10 right-0 flex items-center gap-2"
-        style={{ fontFamily: "var(--font-mono)" }}
-      >
-        <motion.div
-          animate={{ opacity: [1, 0.3, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="w-1.5 h-1.5 bg-green-400 rounded-full"
-        />
-        <span className="text-[10px] text-[var(--color-text-dim)] tracking-wider">
-          ready to build
-        </span>
-      </motion.div>
-    </motion.div>
-  );
-}
-
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden !pt-24 !pb-16">
-      {/* Ambient background effects */}
+    <section className="relative min-h-screen overflow-hidden !p-0">
+      {/* Full-page photo on the right half (desktop only) */}
+      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full">
+        <HeroPortrait />
+      </div>
+
+      {/* Ambient background effects (left side) */}
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-[0.07]"
@@ -173,10 +71,10 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-6xl mx-auto w-full px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* Left: Text content */}
-          <div>
+      {/* Text content — left half */}
+      <div className="relative z-10 min-h-screen flex items-center">
+        <div className="w-full px-6 sm:px-10 lg:pl-16 xl:pl-24 pt-24 pb-16">
+          <div className="lg:w-1/2 lg:pr-8">
             {/* Terminal-style intro line */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -228,7 +126,7 @@ export default function Hero() {
                 className="text-[var(--color-text-dim)] text-xs tracking-[0.2em] uppercase"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
-                MERN Stack Specialist
+                5+ Years Experience
               </span>
             </motion.div>
 
@@ -236,18 +134,58 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 }}
-              className="text-[var(--color-text-muted)] text-base sm:text-lg max-w-xl leading-relaxed mb-12"
+              className="text-[var(--color-text-muted)] text-base sm:text-lg max-w-xl leading-relaxed mb-8"
               style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
             >
-              Building robust, scalable applications with a passion for clean architecture
-              and exceptional user experiences. Polyglot developer with deep expertise
-              in the JavaScript ecosystem.
+              Building full-stack web applications with React.js, Next.js, Node.js,
+              Nest.js, and MongoDB. Skilled in creating scalable, high-performance,
+              and user-centric digital solutions.
             </motion.p>
+
+            {/* Technology icons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.3 }}
+              className="flex items-center gap-5 mb-10"
+            >
+              {[
+                { name: "React", color: "#61DAFB", Icon: SiReact },
+                { name: "Next.js", color: "#ffffff", Icon: SiNextdotjs },
+                { name: "Node.js", color: "#339933", Icon: SiNodedotjs },
+                { name: "Nest.js", color: "#E0234E", Icon: SiNestjs },
+                { name: "MongoDB", color: "#00ED64", Icon: SiMongodb },
+                { name: "TypeScript", color: "#3178C6", Icon: SiTypescript },
+              ].map((tech, i) => (
+                <motion.div
+                  key={tech.name}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.4 + i * 0.1, duration: 0.4 }}
+                  whileHover={{ y: -4, scale: 1.15 }}
+                  className="group relative cursor-default"
+                >
+                  <div
+                    className="w-10 h-10 flex items-center justify-center border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] transition-all duration-300 group-hover:border-[var(--color-accent)]/50"
+                    style={{ color: tech.color }}
+                  >
+                    <tech.Icon className="w-5 h-5" />
+                  </div>
+                  {/* Tooltip */}
+                  <div
+                    className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 bg-[var(--color-bg-elevated)] border border-[var(--color-border)]/50 text-[9px] text-[var(--color-text-dim)] tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    {tech.name}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.4 }}
+              transition={{ duration: 0.6, delay: 1.6 }}
               className="flex flex-wrap gap-4"
             >
               <a
@@ -276,11 +214,6 @@ export default function Hero() {
               </a>
             </motion.div>
           </div>
-
-          {/* Right: Animated SVG portrait */}
-          <div className="hidden lg:flex justify-center items-center">
-            <HeroPortrait />
-          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -288,7 +221,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-6 hidden md:flex flex-col items-center gap-3"
+          className="absolute bottom-8 left-8 hidden md:flex flex-col items-center gap-3"
         >
           <span
             className="text-[var(--color-text-dim)] text-[10px] tracking-[0.3em] uppercase"

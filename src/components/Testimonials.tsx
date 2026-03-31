@@ -5,44 +5,44 @@ import { useRef, useState, useEffect, useCallback } from "react";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "CTO",
-    company: "TechVault Inc.",
-    text: "Hunain completely transformed our backend architecture. API response times dropped by 60%, and the codebase became a joy to work with. His deep understanding of Node.js and MongoDB is exceptional — one of the best engineers I've collaborated with.",
+    name: "Hammad Ali",
+    role: "Full Stack Developer",
+    company: "LinkedIn",
+    text: "I've had the pleasure of working with Hunain, and he's an exceptional Full Stack Developer. His ability to lead teams, solve complex problems, and deliver high-quality code makes him a valuable asset to any tech team. Highly recommended!",
     rating: 5,
-    project: "Platform Redesign",
+    project: "Colleague",
   },
   {
-    name: "James Carter",
-    role: "Product Manager",
-    company: "NovaByte Solutions",
-    text: "Working with Hunain was a game-changer for our product. He didn't just write code — he understood the business problem and delivered a solution that exceeded our expectations. His React expertise brought our dashboard to life with incredible performance.",
-    rating: 5,
-    project: "Analytics Dashboard",
-  },
-  {
-    name: "Amira Hassan",
+    name: "Shoaib Ahmad",
     role: "Founder",
-    company: "Crestline Digital",
-    text: "Hunain built our entire SaaS platform from scratch using the MERN stack. From database design to deployment pipelines, he handled everything with precision and speed. He's the kind of engineer who makes complex things look effortless.",
+    company: "Client",
+    text: "I had the pleasure of working with Hunain on a project, and I was thoroughly impressed by his punctuality in meeting project timelines. He is a promising professional any company can rely on for delivering exceptional user experience and design implementation for web projects. Hunain's expertise spans multiple coding languages, making him a versatile and valuable asset.",
     rating: 5,
-    project: "SaaS Platform",
+    project: "Web Project",
   },
   {
-    name: "David Park",
-    role: "Engineering Lead",
-    company: "StackForge",
-    text: "Hunain joined our team and immediately elevated the code quality across the board. He established CI/CD pipelines, mentored our junior devs, and shipped features faster than anyone expected. Truly a 10x engineer.",
+    name: "Muhammad Rohan",
+    role: "Digital Innovation & Transformation",
+    company: "Senior Colleague",
+    text: "Hunain is a highly talented and hardworking colleague. His ability to grasp complex concepts swiftly and apply them effectively is remarkable. His dedication and work ethic consistently exceed expectations, enabling him to deliver high-quality results and meet tight deadlines. He upholds impeccable ethical standards and conducts himself professionally at all times.",
     rating: 5,
-    project: "Team Augmentation",
+    project: "Salaam Takaful",
   },
   {
-    name: "Lisa Chen",
-    role: "CEO",
-    company: "Pixelwave Studios",
-    text: "We needed a full-stack developer who could handle both the frontend polish and backend complexity of our real-time chat application. Hunain delivered on every front — the app is fast, stable, and our users love it.",
+    name: "Noor Ahmed Raza Pirwani",
+    role: "UX Designer",
+    company: "XLoop Digital",
+    text: "Hunain is a talented and dedicated programmer who takes great pride in delivering high-quality work. His deep understanding of various programming languages and technologies allows him to develop efficient and effective solutions to complex problems. He is a true team player, always willing to go the extra mile to support his colleagues and ensure the success of the project.",
     rating: 5,
-    project: "Real-time Chat App",
+    project: "XLoop Digital",
+  },
+  {
+    name: "Jack Martin",
+    role: "Software Engineering Contractor",
+    company: "Mentor at XLoop",
+    text: "Hunain is a fountain of limitless energy and knowledge. Any organisation would be lucky to have him. Everyone around him grows in confidence and skill — He is a credit to XLoop and I'm proud to have mentored him.",
+    rating: 5,
+    project: "XLoop Digital",
   },
 ];
 
@@ -114,7 +114,7 @@ export default function Testimonials() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-6" ref={ref}>
+      <div className="max-w-7xl mx-auto px-6" ref={ref}>
         {/* Section label */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -126,7 +126,7 @@ export default function Testimonials() {
             className="text-[var(--color-accent)] text-sm"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            05
+            06
           </span>
           <h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold"
@@ -149,7 +149,7 @@ export default function Testimonials() {
               className="text-[10px] text-[var(--color-accent)] tracking-[0.2em] uppercase mb-5"
               style={{ fontFamily: "var(--font-mono)" }}
             >
-              Client Reviews
+              LinkedIn Recommendations
             </div>
 
             {testimonials.map((item, i) => (

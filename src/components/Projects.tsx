@@ -310,7 +310,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative">
-      <div className="max-w-6xl mx-auto" ref={ref}>
+      <div className="max-w-7xl mx-auto" ref={ref}>
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
