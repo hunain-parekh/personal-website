@@ -232,10 +232,10 @@ export default function Testimonials() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative"
           >
-            <div className="border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-8 sm:p-10 relative min-h-[340px] flex flex-col justify-between overflow-hidden">
+            <div className="border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-5 sm:p-8 md:p-10 relative min-h-[280px] sm:min-h-[340px] flex flex-col justify-between overflow-hidden">
               {/* Large quote mark */}
               <div
-                className="absolute top-4 right-6 text-[120px] leading-none text-[var(--color-accent)] opacity-[0.07] select-none pointer-events-none"
+                className="absolute top-4 right-4 sm:right-6 text-[80px] sm:text-[120px] leading-none text-[var(--color-accent)] opacity-[0.07] select-none pointer-events-none"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 &ldquo;

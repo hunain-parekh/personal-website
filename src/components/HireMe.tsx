@@ -63,7 +63,7 @@ export default function HireMe() {
               Ready for the next challenge
             </motion.span>
             <h2
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-[0.95]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               <span className="text-[var(--color-text)]">Let&apos;s Build </span>
@@ -130,7 +130,7 @@ export default function HireMe() {
           >
             <a
               href="#contact"
-              className="group relative inline-flex items-center gap-3 px-10 py-5 bg-[var(--color-accent)] text-[var(--color-bg)] text-sm tracking-widest uppercase font-semibold overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_var(--color-accent-glow)]"
+              className="group relative inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-5 bg-[var(--color-accent)] text-[var(--color-bg)] text-sm tracking-widest uppercase font-semibold overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_var(--color-accent-glow)]"
               style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem" }}
             >
               <span className="relative z-10">Hire Me</span>
@@ -149,7 +149,7 @@ export default function HireMe() {
 
             <a
               href="mailto:hunain.parekh@hotmail.com"
-              className="group inline-flex items-center gap-3 px-10 py-5 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm tracking-widest uppercase hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all duration-300"
+              className="group inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-5 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm tracking-widest uppercase hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-all duration-300"
               style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem" }}
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

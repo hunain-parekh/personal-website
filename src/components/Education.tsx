@@ -71,7 +71,7 @@ export default function Education() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="col-span-12 lg:col-span-8"
           >
-            <div className="border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-8 relative overflow-hidden h-full">
+            <div className="border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-5 sm:p-8 relative overflow-hidden h-full">
               {/* Top accent line */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#5B4B8A] via-[var(--color-accent)] to-transparent" />
 
@@ -202,7 +202,7 @@ export default function Education() {
 
                 {/* Right side - Stats */}
                 <div className="flex flex-wrap items-center gap-4">
-                  <div className="text-center px-5 py-3 border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 min-w-[100px]">
+                  <div className="text-center px-5 py-3 border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/5 min-w-[80px] sm:min-w-[100px]">
                     <div className="text-2xl font-bold text-gradient" style={{ fontFamily: "var(--font-display)" }}>
                       60
                     </div>
@@ -210,7 +210,7 @@ export default function Education() {
                       Credits Done
                     </div>
                   </div>
-                  <div className="text-center px-5 py-3 border border-[var(--color-border)]/50 bg-[var(--color-bg)] min-w-[100px]">
+                  <div className="text-center px-5 py-3 border border-[var(--color-border)]/50 bg-[var(--color-bg)] min-w-[80px] sm:min-w-[100px]">
                     <div className="text-2xl font-bold text-[var(--color-text)]" style={{ fontFamily: "var(--font-display)" }}>
                       60
                     </div>
@@ -218,7 +218,7 @@ export default function Education() {
                       Remaining
                     </div>
                   </div>
-                  <div className="text-center px-5 py-3 border border-[var(--color-border)]/50 bg-[var(--color-bg)] min-w-[100px]">
+                  <div className="text-center px-5 py-3 border border-[var(--color-border)]/50 bg-[var(--color-bg)] min-w-[80px] sm:min-w-[100px]">
                     <div className="text-2xl font-bold text-gradient" style={{ fontFamily: "var(--font-display)" }}>
                       100%
                     </div>
@@ -226,7 +226,7 @@ export default function Education() {
                       Scholarship
                     </div>
                   </div>
-                  <div className="text-center px-5 py-3 border border-[#5B4B8A]/30 bg-[#5B4B8A]/5 min-w-[100px]">
+                  <div className="text-center px-5 py-3 border border-[#5B4B8A]/30 bg-[#5B4B8A]/5 min-w-[80px] sm:min-w-[100px]">
                     <div className="text-xl font-bold text-[#9D8EC9]" style={{ fontFamily: "var(--font-display)" }}>
                       Dec 2027
                     </div>

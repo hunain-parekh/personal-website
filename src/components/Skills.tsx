@@ -103,7 +103,7 @@ export default function Skills() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="col-span-12 lg:col-span-5 row-span-2"
           >
-            <div className="h-full border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-8 relative overflow-hidden">
+            <div className="h-full border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-5 sm:p-8 relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-bright)] to-transparent" />
 
               <h3

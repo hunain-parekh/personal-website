@@ -93,7 +93,13 @@
   }
 
   section {
-    padding: 5rem 1rem;
+    padding: 3.5rem 0.75rem;
+  }
+
+  @media (min-width: 480px) {
+    section {
+      padding: 4rem 1rem;
+    }
   }
 
   @media (min-width: 768px) {

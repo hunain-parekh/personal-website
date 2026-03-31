@@ -35,7 +35,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative">
-      <div className="max-w-7xl mx-auto" ref={ref}>
+      <div className="max-w-7xl mx-auto px-6" ref={ref}>
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -58,7 +58,7 @@ export default function Contact() {
           <div className="glow-line flex-1 ml-4" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           {/* Left: Contact info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}

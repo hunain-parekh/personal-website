@@ -113,7 +113,7 @@ export default function AiChat() {
         }}
         transition={{ delay: 2, type: "spring", stiffness: 200, damping: 20 }}
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-[100] w-16 h-16 flex items-center justify-center bg-[var(--color-bg)] border-2 transition-all duration-500 group ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center bg-[var(--color-bg)] border-2 transition-all duration-500 group ${
           isTyping ? "border-[var(--color-accent)]" : "border-[var(--color-accent)]/60 hover:border-[var(--color-accent)]"
         }`}
         aria-label="Chat with AI assistant"
@@ -349,7 +349,7 @@ export default function AiChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.8 }}
             transition={{ delay: 4, duration: 0.5 }}
-            className="fixed bottom-[88px] right-6 z-[100] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] px-4 py-3 max-w-[240px] shadow-xl"
+            className="fixed bottom-[78px] right-4 sm:bottom-[88px] sm:right-6 z-[100] bg-[var(--color-bg-elevated)] border border-[var(--color-border)] px-4 py-3 max-w-[200px] sm:max-w-[240px] shadow-xl"
           >
             <p className="text-xs text-[var(--color-text-muted)]" style={{ fontFamily: "var(--font-body)" }}>
               Have questions about Hunain? <span className="text-[var(--color-accent)]">Ask his AI!</span>
@@ -367,7 +367,7 @@ export default function AiChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed bottom-24 right-6 z-[100] w-[380px] max-w-[calc(100vw-48px)] h-[520px] max-h-[calc(100vh-120px)] flex flex-col border border-[var(--color-border)] bg-[var(--color-bg)] shadow-2xl overflow-hidden"
+            className="fixed bottom-20 right-3 sm:bottom-24 sm:right-6 z-[100] w-[calc(100vw-24px)] sm:w-[380px] h-[450px] sm:h-[520px] max-h-[calc(100vh-100px)] flex flex-col border border-[var(--color-border)] bg-[var(--color-bg)] shadow-2xl overflow-hidden"
             style={{
               boxShadow: "0 25px 80px rgba(0,0,0,0.5), 0 0 60px var(--color-accent-glow)",
             }}

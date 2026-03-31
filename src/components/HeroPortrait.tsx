@@ -87,7 +87,7 @@ export default function HeroPortrait() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.8, duration: 0.5 }}
-        className="absolute top-24 right-8 bg-[var(--color-bg-elevated)]/80 backdrop-blur-sm border border-[var(--color-border)] px-4 py-2 hidden xl:block"
+        className="absolute top-24 right-8 bg-[var(--color-bg-elevated)]/80 backdrop-blur-sm border border-[var(--color-border)] px-4 py-2 hidden lg:block"
       >
         <span
           className="text-[10px] text-[var(--color-accent)]"
@@ -101,7 +101,7 @@ export default function HeroPortrait() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 3.2, duration: 0.5 }}
-        className="absolute bottom-28 right-8 bg-[var(--color-bg-elevated)]/80 backdrop-blur-sm border border-[var(--color-accent)]/30 px-4 py-3 hidden xl:block"
+        className="absolute bottom-28 right-8 bg-[var(--color-bg-elevated)]/80 backdrop-blur-sm border border-[var(--color-accent)]/30 px-4 py-3 hidden lg:block"
         style={{
           boxShadow: "0 8px 30px rgba(0,0,0,0.3), 0 0 20px var(--color-accent-glow)",
         }}

@@ -94,7 +94,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black leading-[0.9] tracking-tight mb-2"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-[6.5rem] font-black leading-[0.9] tracking-tight mb-2"
               style={{ fontFamily: "var(--font-display)" }}
             >
               <span className="block">Hunain</span>
@@ -147,7 +147,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.3 }}
-              className="flex items-center gap-5 mb-10"
+              className="flex flex-wrap items-center gap-3 sm:gap-5 mb-10"
             >
               {[
                 { name: "React", color: "#61DAFB", Icon: SiReact },
@@ -190,7 +190,7 @@ export default function Hero() {
             >
               <a
                 href="#projects"
-                className="group relative inline-flex items-center gap-3 px-8 py-4 border border-[var(--color-accent)] text-[var(--color-accent)] text-sm tracking-widest uppercase overflow-hidden transition-colors duration-500 hover:text-[var(--color-bg)]"
+                className="group relative inline-flex items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 border border-[var(--color-accent)] text-[var(--color-accent)] text-sm tracking-widest uppercase overflow-hidden transition-colors duration-500 hover:text-[var(--color-bg)]"
                 style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem" }}
               >
                 <span className="relative z-10">View Work</span>
@@ -206,8 +206,25 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-[var(--color-accent)] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
               </a>
               <a
+                href="/resume.pdf"
+                download
+                className="group relative inline-flex items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 border border-[var(--color-border)] text-[var(--color-text-muted)] text-sm tracking-widest uppercase overflow-hidden transition-colors duration-500 hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]"
+                style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem" }}
+              >
+                <svg
+                  className="relative z-10 w-4 h-4 group-hover:translate-y-0.5 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 18h16" />
+                </svg>
+                <span className="relative z-10">Resume</span>
+              </a>
+              <a
                 href="#contact"
-                className="inline-flex items-center gap-3 px-8 py-4 text-[var(--color-text-muted)] text-sm tracking-widest uppercase hover:text-[var(--color-text)] transition-colors duration-300"
+                className="inline-flex items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 text-[var(--color-text-muted)] text-sm tracking-widest uppercase hover:text-[var(--color-text)] transition-colors duration-300"
                 style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem" }}
               >
                 Get in Touch

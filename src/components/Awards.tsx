@@ -200,7 +200,7 @@ export default function Awards() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="grid grid-cols-2 gap-4 pt-4"
+              className="grid grid-cols-2 gap-3 sm:gap-4 pt-4"
             >
               {[
                 { label: "Category", value: "Cloud" },
@@ -332,7 +332,7 @@ export default function Awards() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 1.0, duration: 0.6 }}
-                className="grid grid-cols-2 gap-4 pt-4"
+                className="grid grid-cols-2 gap-3 sm:gap-4 pt-4"
               >
                 {[
                   { label: "Scholarship", value: "100%" },
@@ -613,7 +613,7 @@ export default function Awards() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 1.2, duration: 0.6 }}
-                className="grid grid-cols-2 gap-4 pt-4"
+                className="grid grid-cols-2 gap-3 sm:gap-4 pt-4"
               >
                 {[
                   { label: "Competition", value: "Teknofest PK" },

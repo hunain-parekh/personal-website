@@ -241,7 +241,7 @@ export default function Experience() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="col-span-12 lg:col-span-8"
           >
-            <div className="border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-8 relative overflow-hidden">
+            <div className="border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-5 sm:p-8 relative overflow-hidden">
               {/* Top accent line with company color */}
               <div
                 className="absolute top-0 left-0 right-0 h-1 transition-colors duration-500"

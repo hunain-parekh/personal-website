@@ -235,7 +235,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="lg:col-span-8 relative group"
           >
-            <div className="relative aspect-[21/9] overflow-hidden border border-[var(--color-border)]/50">
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] overflow-hidden border border-[var(--color-border)]/50">
               <Image
                 src="/about-3.jpg"
                 alt="Dual laptop coding setup with notes"
@@ -274,7 +274,7 @@ export default function About() {
         </div>
 
         {/* Row 4: Tech stack + Terminal + Achievements */}
-        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Tech Arsenal */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
