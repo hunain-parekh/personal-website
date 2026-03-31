@@ -168,23 +168,8 @@ export default function Certifications() {
             </motion.div>
           </div>
 
-          {/* Navigation arrows */}
+          {/* Navigation */}
           <div className="flex items-center justify-between mt-6">
-            {/* Progress dots */}
-            <div className="flex gap-2">
-              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goTo(i)}
-                  className={`h-1 rounded-full transition-all duration-500 ${
-                    i === active
-                      ? "w-8 bg-[var(--color-accent)]"
-                      : "w-3 bg-[var(--color-border)] hover:bg-[var(--color-text-dim)]"
-                  }`}
-                />
-              ))}
-            </div>
-
             {/* Arrows */}
             <div className="flex gap-2">
               <button
@@ -225,6 +210,29 @@ export default function Certifications() {
                   />
                 </svg>
               </button>
+            </div>
+
+            {/* Counter */}
+            <div
+              className="flex items-center gap-2"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              <span className="text-lg font-bold text-gradient">
+                {String(active + 1).padStart(2, "0")}
+              </span>
+              <span className="text-[var(--color-text-dim)] text-xs">/</span>
+              <span className="text-[var(--color-text-dim)] text-xs">
+                {String(certifications.length).padStart(2, "0")}
+              </span>
+            </div>
+
+            {/* Progress bar */}
+            <div className="hidden sm:block w-24 h-1 bg-[var(--color-border)]/30 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-[var(--color-accent)] rounded-full"
+                animate={{ width: `${((active + 1) / certifications.length) * 100}%` }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              />
             </div>
           </div>
         </motion.div>
