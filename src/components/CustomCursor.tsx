@@ -9,11 +9,9 @@ export default function CustomCursor() {
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  const springX = useSpring(cursorX, { stiffness: 500, damping: 28 });
-  const springY = useSpring(cursorY, { stiffness: 500, damping: 28 });
 
-  const ringX = useSpring(cursorX, { stiffness: 150, damping: 20 });
-  const ringY = useSpring(cursorY, { stiffness: 150, damping: 20 });
+  const ringX = useSpring(cursorX, { stiffness: 700, damping: 35, mass: 0.3 });
+  const ringY = useSpring(cursorY, { stiffness: 700, damping: 35, mass: 0.3 });
 
   useEffect(() => {
     // Only show custom cursor on desktop
@@ -56,8 +54,8 @@ export default function CustomCursor() {
       <motion.div
         className="fixed top-0 left-0 z-[9998] pointer-events-none mix-blend-difference hidden md:block"
         style={{
-          x: springX,
-          y: springY,
+          x: cursorX,
+          y: cursorY,
           translateX: "-50%",
           translateY: "-50%",
         }}
@@ -67,7 +65,7 @@ export default function CustomCursor() {
             width: isHovering ? 8 : 4,
             height: isHovering ? 8 : 4,
           }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.12 }}
           className="rounded-full bg-[var(--color-accent)]"
         />
       </motion.div>
@@ -90,7 +88,7 @@ export default function CustomCursor() {
               ? "var(--color-accent)"
               : "rgba(212, 168, 83, 0.3)",
           }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.18 }}
           className="rounded-full border"
         />
       </motion.div>
