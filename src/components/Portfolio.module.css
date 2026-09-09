@@ -60,3 +60,4 @@
 .pageHead{padding-top:24px!important;padding-bottom:0!important}.pageHead>div{display:grid;grid-template-columns:1.4fr 1fr;gap:6%;align-items:end;border-top:1px solid var(--line);padding:48px 0 56px}.pageHead h1{font-size:clamp(40px,5.2vw,72px);text-wrap:balance;font-weight:500;letter-spacing:-.04em;line-height:1.02;margin:0}.pageHead p{font-size:16px;color:var(--muted);max-width:420px;margin:0 0 8px}.pageHead+section{padding-top:0}.pageHead+.journey{padding-top:40px}
 .station p{font-size:14px;line-height:1.6;color:var(--muted)}
 .cta{background:var(--ink);color:var(--paper);display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}.cta h2{font-size:clamp(36px,4.5vw,62px)}.cta a{display:inline-flex;align-items:center;gap:40px;font-size:22px;border-bottom:1px solid #ffffff70;padding-bottom:12px}.cta a:hover{color:#7fc8b4}.cta a svg{font-size:28px}
+.caseStudyOpen{border-top:1px solid var(--line);padding-top:24px}
