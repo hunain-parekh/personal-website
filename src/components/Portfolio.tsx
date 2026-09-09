@@ -4,6 +4,7 @@ import Magnetic from './Magnetic';
 import Reveal from './Reveal';
 import CountUp from './CountUp';
 import ContactForm from './ContactForm';
+import ProcessMapper from './ProcessMapper';
 import { FiArrowUpRight } from 'react-icons/fi';
 import styles from './Portfolio.module.css';
 
@@ -71,7 +72,7 @@ export function Deliver() {
           ['Act', 'Tools that write straight into the systems you already run, with permissions inside the tool.'],
           ['Recover', 'Failed actions queue and replay. The exceptions list is the only thing a person reads.'],
         ].map(([stage, text]) => <div key={stage} className={styles.station} data-reveal><strong>{stage}</strong><p>{text}</p></div>)}
-      </div></section>
+      </div><ProcessMapper /></section>
   </>;
 }
 export function Work({ featured = false, bare = false }: { featured?: boolean; bare?: boolean }) {
