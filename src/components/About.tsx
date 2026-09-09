@@ -92,12 +92,13 @@ export default function About() {
           >
             <div className="relative aspect-[16/10] overflow-hidden border border-[var(--color-border)]/50">
               <Image
-                src="/about-2.jpg"
-                alt="Hunain focused with headphones at the office"
+                src="/profile.jpg"
+                alt="Hunain Parekh, Senior Software Engineer"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={90}
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)]/60 via-transparent to-transparent" />
 
@@ -108,7 +109,7 @@ export default function About() {
               {/* Label */}
               <div className="absolute bottom-4 left-4">
                 <span className="text-[var(--color-accent)] text-[10px] tracking-[0.2em] uppercase" style={{ fontFamily: "var(--font-mono)" }}>
-                  Deep Focus
+                  Portrait
                 </span>
               </div>
             </div>

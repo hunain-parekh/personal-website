@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "./TiltCard";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 
@@ -232,7 +233,7 @@ export default function Testimonials() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative"
           >
-            <div className="border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-5 sm:p-8 md:p-10 relative min-h-[280px] sm:min-h-[340px] flex flex-col justify-between overflow-hidden">
+            <TiltCard max={5} className="border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] p-5 sm:p-8 md:p-10 relative min-h-[280px] sm:min-h-[340px] flex flex-col justify-between overflow-hidden">
               {/* Large quote mark */}
               <div
                 className="absolute top-4 right-4 sm:right-6 text-[80px] sm:text-[120px] leading-none text-[var(--color-accent)] opacity-[0.07] select-none pointer-events-none"
@@ -294,7 +295,7 @@ export default function Testimonials() {
                   </div>
                 </motion.div>
               </AnimatePresence>
-            </div>
+            </TiltCard>
 
             {/* Navigation arrows */}
             <div className="flex gap-2 mt-4 justify-end">

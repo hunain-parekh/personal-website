@@ -178,7 +178,9 @@ export default function Contact() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <div className={`flip ${status === "success" ? "flipped" : ""}`}>
+            <div className="flip-inner">
+            <form onSubmit={handleSubmit} className="flip-front space-y-8">
               <div>
                 <label
                   className="text-[10px] text-[var(--color-text-dim)] tracking-[0.2em] uppercase block mb-2"
@@ -290,17 +292,6 @@ export default function Contact() {
                   <div className="absolute inset-0 bg-[var(--color-accent)] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
                 </button>
 
-                {status === "success" && (
-                  <motion.span
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    className="text-sm text-emerald-400"
-                    style={{ fontFamily: "var(--font-mono)" }}
-                  >
-                    ✓ Message sent successfully
-                  </motion.span>
-                )}
-
                 {status === "error" && (
                   <motion.span
                     initial={{ opacity: 0, x: -10 }}
@@ -313,6 +304,18 @@ export default function Contact() {
                 )}
               </div>
             </form>
+            <div className="flip-back flex flex-col items-center justify-center text-center border border-[var(--color-accent)]/40 bg-[var(--color-bg-elevated)] p-10" aria-live="polite">
+              <div className="w-12 h-[2px] bg-[var(--color-accent)] mb-6" />
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3" style={{ fontFamily: "var(--font-display)" }}>
+                Message sent
+              </h3>
+              <p className="text-[var(--color-text-muted)] max-w-sm">
+                Thanks for reaching out. I read every message and usually reply within a day.
+              </p>
+              <div className="w-12 h-[2px] bg-[var(--color-accent)] mt-6" />
+            </div>
+            </div>
+            </div>
           </motion.div>
         </div>
       </div>

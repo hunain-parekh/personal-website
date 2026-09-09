@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "./TiltCard";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
@@ -66,7 +67,7 @@ export default function Awards() {
             />
 
             {/* Main image container */}
-            <div className="relative overflow-hidden border border-[var(--color-border)]/50">
+            <TiltCard max={7} className="relative overflow-hidden border border-[var(--color-border)]/50">
               <div className="relative aspect-[4/3]">
                 <Image
                   src="/top-champ.webp"
@@ -107,7 +108,7 @@ export default function Awards() {
                   #01 Top Champ
                 </span>
               </motion.div>
-            </div>
+            </TiltCard>
 
             {/* Floating particles */}
             <motion.div

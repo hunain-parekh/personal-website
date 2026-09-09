@@ -57,17 +57,15 @@ export async function POST(req: NextRequest) {
       from: `"Portfolio Contact" <${SMTP_EMAIL}>`,
       to: recipient,
       replyTo: safeEmail,
-      subject: `Portfolio Contact from ${safeName}`,
+      subject: `Site message from ${safeName}`,
       text: `Name: ${safeName}\nEmail: ${safeEmail}\n\nMessage:\n${safeMessage}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; background: #0a0a0a; color: #e5e5e5;">
-          <h2 style="color: #d4a853; border-bottom: 1px solid #333; padding-bottom: 12px;">New Portfolio Message</h2>
-          <p><strong style="color: #d4a853;">Name:</strong> ${escapeHtml(safeName)}</p>
-          <p><strong style="color: #d4a853;">Email:</strong> ${escapeHtml(safeEmail)}</p>
-          <div style="margin-top: 20px;">
-            <strong style="color: #d4a853;">Message:</strong>
-            <p style="white-space: pre-wrap; line-height: 1.6; margin-top: 8px;">${escapeHtml(safeMessage)}</p>
-          </div>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; background: #eef0ec; color: #191d24;">
+          <h2 style="font-weight: 500; border-bottom: 1px solid #cdd2cb; padding-bottom: 12px;">New message from the site</h2>
+          <p><strong>Name:</strong> ${escapeHtml(safeName)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(safeEmail)}</p>
+          <p style="margin-top: 20px;"><strong>The process they do by hand:</strong></p>
+          <p style="white-space: pre-wrap; line-height: 1.6;">${escapeHtml(safeMessage)}</p>
         </div>
       `,
     });

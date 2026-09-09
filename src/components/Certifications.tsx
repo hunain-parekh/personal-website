@@ -1,5 +1,6 @@
 "use client";
 
+import TiltCard from "./TiltCard";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
@@ -130,7 +131,7 @@ export default function Certifications() {
                   className="flex-shrink-0"
                   style={{ width: `calc(${cardPercent}% - ${((visibleCount - 1) * gap) / visibleCount}px)` }}
                 >
-                  <div className="relative group border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] overflow-hidden cursor-pointer">
+                  <TiltCard className="relative group border border-[var(--color-border)]/50 bg-[var(--color-bg-elevated)] overflow-hidden cursor-pointer">
                     {/* Image */}
                     <div className="relative aspect-[4/3]">
                       <Image
@@ -162,7 +163,7 @@ export default function Certifications() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </TiltCard>
                 </div>
               ))}
             </motion.div>

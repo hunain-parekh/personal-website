@@ -1,8 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import HeroPortrait from "./HeroPortrait";
+import { motion, useInView } from "framer-motion";
+import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
+import Magnetic from "./Magnetic";
+
+const Sculpture = dynamic(() => import("./Sculpture"), { ssr: false });
 import { SiMongodb, SiReact, SiNodedotjs, SiTypescript, SiNestjs, SiNextdotjs } from "react-icons/si";
 
 function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
@@ -36,11 +39,57 @@ function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
 }
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const onScreen = useInView(sectionRef, { amount: 0.05 });
+
   return (
-    <section className="relative min-h-screen overflow-hidden !p-0">
-      {/* Full-page photo on the right half (desktop only) */}
-      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full">
-        <HeroPortrait />
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden !p-0">
+      {/* Brass sculpture: right half on desktop, dimmed backdrop on mobile */}
+      <div className="absolute inset-0 lg:left-1/2 opacity-40 lg:opacity-100">
+        <Sculpture active={onScreen} />
+        {/* blend into the dark left side */}
+        <div
+          className="absolute inset-0 pointer-events-none hidden lg:block"
+          style={{ background: "linear-gradient(to right, var(--color-bg) 0%, transparent 25%)" }}
+        />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(to top, var(--color-bg) 0%, transparent 30%)" }}
+        />
+
+        <div className="absolute top-6 right-6 w-12 h-12 border-t-2 border-r-2 border-[var(--color-accent)] opacity-40" />
+        <div className="absolute bottom-6 right-6 w-12 h-12 border-b-2 border-r-2 border-[var(--color-accent)] opacity-40" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.2, duration: 0.6 }}
+          className="absolute bottom-8 right-8 flex items-center gap-3"
+        >
+          <motion.div
+            animate={{ opacity: [1, 0.3, 1] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="w-2 h-2 bg-green-400 rounded-full"
+          />
+          <span className="text-[10px] text-green-400/80 tracking-wider" style={{ fontFamily: "var(--font-mono)" }}>
+            AVAILABLE FOR WORK
+          </span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.8, duration: 0.5 }}
+          className="absolute bottom-28 right-8 bg-[var(--color-bg-elevated)]/80 backdrop-blur-sm border border-[var(--color-accent)]/30 px-4 py-3 hidden lg:block"
+          style={{ boxShadow: "0 8px 30px rgba(0,0,0,0.3), 0 0 20px var(--color-accent-glow)" }}
+        >
+          <div className="text-xl font-bold text-gradient" style={{ fontFamily: "var(--font-display)" }}>
+            5+
+          </div>
+          <div className="text-[8px] text-[var(--color-text-dim)] tracking-widest uppercase" style={{ fontFamily: "var(--font-mono)" }}>
+            Years Exp
+          </div>
+        </motion.div>
       </div>
 
       {/* Ambient background effects (left side) */}
@@ -188,6 +237,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 1.6 }}
               className="flex flex-wrap gap-4"
             >
+              <Magnetic>
               <a
                 href="#projects"
                 className="group relative inline-flex items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 border border-[var(--color-accent)] text-[var(--color-accent)] text-sm tracking-widest uppercase overflow-hidden transition-colors duration-500 hover:text-[var(--color-bg)]"
@@ -205,6 +255,8 @@ export default function Hero() {
                 </svg>
                 <div className="absolute inset-0 bg-[var(--color-accent)] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
               </a>
+              </Magnetic>
+              <Magnetic>
               <a
                 href="/resume.pdf"
                 download
@@ -222,6 +274,7 @@ export default function Hero() {
                 </svg>
                 <span className="relative z-10">Resume</span>
               </a>
+              </Magnetic>
               <a
                 href="#contact"
                 className="inline-flex items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 text-[var(--color-text-muted)] text-sm tracking-widest uppercase hover:text-[var(--color-text)] transition-colors duration-300"
