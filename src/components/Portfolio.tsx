@@ -43,6 +43,10 @@ export function PageHead({ title, intro }: { title: React.ReactNode; intro: Reac
   return <section className={styles.pageHead}><h1>{title}</h1><p>{intro}</p></section>;
 }
 
+export function Cta() {
+  return <section className={styles.cta}><h2>What does your team<br />still do by hand?</h2><Magnetic strength={0.2}><a href="/#contact">Tell me about it <Arrow /></a></Magnetic></section>;
+}
+
 export function Hero() {
   return <>
       <section id="home" className={styles.hero}>
@@ -69,9 +73,9 @@ export function Deliver() {
       </div></section>
   </>;
 }
-export function Work({ featured = false }: { featured?: boolean }) {
+export function Work({ featured = false, bare = false }: { featured?: boolean; bare?: boolean }) {
   return <>
-      <section id="work" className={styles.work}><div className={styles.sectionHeading} data-reveal><h2>{featured ? <>One process,<br />running without people.</> : <>Four processes<br />running without people.</>}</h2><p>{featured ? <>Patient bookings, from the phone call to the clinic record. <br /><a href="/work">See all four case studies</a></> : <>Each one used to need a person at every step. <br />The green line says where a human is still involved.</>}</p></div>
+      <section id="work" className={styles.work}>{!bare && <div className={styles.sectionHeading} data-reveal><h2>{featured ? <>One process,<br />running without people.</> : <>Four processes<br />running without people.</>}</h2><p>{featured ? <>Patient bookings, from the phone call to the clinic record. <br /><a href="/work">See all four case studies</a></> : <>Each one used to need a person at every step. <br />The green line says where a human is still involved.</>}</p></div>}
         {(featured ? projects.filter(p => p.name === 'xAIa') : projects).map(project => <article key={project.name} className={styles.project} data-reveal><TiltCard className={`${styles.projectVisual} ${styles[project.visual]}`} max={5}><div className={styles.visualHeading}><strong>{project.name}</strong><span>System illustration</span></div>
           {project.visual === 'beme' ? <div className={styles.conversation}><div className={styles.message}>Can we schedule a visit for Friday?</div><div className={styles.tool}><span aria-hidden="true">✳</span><div>Business context retrieved<small>Checking calendar availability</small></div></div><div className={styles.reply}>Let’s find a time that works.</div><div className={styles.result}><span aria-hidden="true">✓</span> Booked. No human involved.</div></div> : project.visual === 'xaia' ? <div className={styles.voiceIllustration}><div className={styles.wave} aria-hidden="true">{Array.from({ length: 35 }, (_, i) => <i key={i} style={{ height: `${16 + Math.abs(Math.sin(i * 1.8) * Math.cos(i * .3)) * 78}px` }} />)}</div><span>Call in. Appointment out.</span><div className={styles.voiceTags}><span>Arabic</span><span>English</span><span>Simplex</span></div></div> : project.visual === 'play' ? <div className={styles.ticket}><div><small>You’re on the list.</small><strong>Good times.<br />Great company.</strong></div><div className={styles.ticketBottom}><span>Play Lounge<br /><small>Guest experience</small></span><span className={styles.ticketMark} aria-hidden="true">✳</span></div></div> : null}
           {project.visual === 'track' && <div className={styles.scorecard}><div className={styles.signals}><span>Task<strong>Invoice module shipped</strong></span><span>Submitted<strong>2 days early</strong></span><span>QA<strong>Passed, 1 minor</strong></span><span>Live feedback<strong>Client: “exactly what we asked”</strong></span></div><div className={styles.score}><small>Performance this week</small><strong>92</strong><i style={{ width: "92%" }} /></div></div>}
@@ -79,9 +83,9 @@ export function Work({ featured = false }: { featured?: boolean }) {
       </section>
   </>;
 }
-export function Approach() {
+export function Approach({ bare = false }: { bare?: boolean }) {
   return <>
-      <section id="approach" className={styles.approach}><div className={styles.sectionHeading} data-reveal><h2>How a process<br />stops needing people.</h2><p>The same four parts, whatever the process is. <br />Get each one right and the handover rate falls.</p></div><svg className={styles.flow} viewBox="0 0 1000 150" aria-hidden="true" focusable="false"><path className={styles.flowLine} d="M0 40 H1000" /><path className={styles.flowBranch} d="M500 40 C 560 40, 570 118, 640 118 H1000" /><text className={styles.flowText} x="1000" y="140" textAnchor="end">a person steps in, only on exceptions</text><text className={styles.flowText} x="0" y="22">work arrives</text>{[125, 375, 625, 875].map((x, i) => <circle key={x} className={styles.flowNode} cx={x} cy="40" r="9" style={{ animationDelay: `${(x / 1000) * 6}s` }} />)}{[0, 1, 2, 3, 4].map(i => <circle key={i} className={styles.flowDot} r="6" style={{ animationDelay: `${i * 1.2}s` }} />)}<circle className={`${styles.flowDot} ${styles.flowException}`} r="6" style={{ animationDelay: "3.6s" }} /></svg><div className={styles.loop}>
+      <section id="approach" className={styles.approach}>{!bare && <><div className={styles.sectionHeading} data-reveal><h2>How a process<br />stops needing people.</h2><p>The same four parts, whatever the process is. <br />Get each one right and the handover rate falls.</p></div><svg className={styles.flow} viewBox="0 0 1000 150" aria-hidden="true" focusable="false"><path className={styles.flowLine} d="M0 40 H1000" /><path className={styles.flowBranch} d="M500 40 C 560 40, 570 118, 640 118 H1000" /><text className={styles.flowText} x="1000" y="140" textAnchor="end">a person steps in, only on exceptions</text><text className={styles.flowText} x="0" y="22">work arrives</text>{[125, 375, 625, 875].map((x, i) => <circle key={x} className={styles.flowNode} cx={x} cy="40" r="9" style={{ animationDelay: `${(x / 1000) * 6}s` }} />)}{[0, 1, 2, 3, 4].map(i => <circle key={i} className={styles.flowDot} r="6" style={{ animationDelay: `${i * 1.2}s` }} />)}<circle className={`${styles.flowDot} ${styles.flowException}`} r="6" style={{ animationDelay: "3.6s" }} /></svg></>}<div className={styles.loop}>
         {[
           ['Intake', 'Work arrives as a phone call, a WhatsApp message, an email, or a form, and someone has to read it and type it somewhere.', 'Agents on every channel the work comes in on, in English and Arabic, that understand the request and pull the context they need.'],
           ['Decide', 'The rules live in someone’s head. The system either guesses or asks a person every time. Performance is judged once a quarter from memory.', 'Explicit decision logic: what the model decides, what a rule decides, and the exact conditions under which a human is asked. Scores and decisions come from the work record, not from a form.'],
