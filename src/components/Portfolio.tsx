@@ -40,7 +40,7 @@ export function Page({ children }: { children: React.ReactNode }) {
 }
 
 export function PageHead({ title, intro }: { title: React.ReactNode; intro: React.ReactNode }) {
-  return <section className={styles.pageHead}><h1>{title}</h1><p>{intro}</p></section>;
+  return <section className={styles.pageHead}><div><h1>{title}</h1><p>{intro}</p></div></section>;
 }
 
 export function Cta() {
@@ -110,9 +110,9 @@ export function Processes() {
       </div><p className={styles.processNote}>What I measure on every one: the handover rate. How often a person had to step in, and why. That number is the product.</p></section>
   </>;
 }
-export function Journey() {
+export function Journey({ bare = false }: { bare?: boolean }) {
   return <>
-      <section id="journey" className={styles.journey}><div className={styles.journeyIntro} data-reveal><h2>I learned how businesses<br />run before I automated one.</h2><p>Each role taught me another layer of the work companies do by hand. That is why I know where the person is hiding in a process, and what it takes to remove them safely.</p><a href="/work">See where that led</a></div><div className={styles.timeline}>
+      <section id="journey" className={bare ? styles.timelineOnly : styles.journey}>{!bare && <div className={styles.journeyIntro} data-reveal><h2>I learned how businesses<br />run before I automated one.</h2><p>Each role taught me another layer of the work companies do by hand. That is why I know where the person is hiding in a process, and what it takes to remove them safely.</p><a href="/work">See where that led</a></div>}<div className={styles.timeline}>
         {[
           ['2021–2022', 'Global Clicks', 'Learning what the work actually is.', 'As Assistant IT Manager, I handled internal support and built a Laravel leave module. My first look at how much of a company runs on someone remembering to do something.'],
           ['2022', 'Cloud Data', 'Building the operational backbone.', 'Inventory and courier systems in .NET with SQL Server, barcode integration, and Google Maps tracking. The kind of system an automation later has to write into.'],
