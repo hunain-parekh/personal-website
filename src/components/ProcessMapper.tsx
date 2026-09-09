@@ -35,8 +35,9 @@ export default function ProcessMapper() {
 
   return (
     <div className={styles.mapper}>
+      <div className={styles.mapperIntro}><h3>Try it with your own process.</h3><p>Describe something your team still does by hand. You get it back on the four stations, with the exact point where a person would still step in.</p></div>
       <form onSubmit={onSubmit}>
-        <label>Try it with a process your team does by hand<textarea value={text} onChange={(e) => setText(e.target.value)} rows={3} minLength={10} maxLength={2000} required placeholder="Example: Customers call to book a dental appointment. The receptionist checks the calendar, writes the booking in our clinic software, and sends a WhatsApp reminder the day before." /></label>
+        <label>The process, in a few sentences<textarea value={text} onChange={(e) => setText(e.target.value)} rows={3} minLength={10} maxLength={2000} required placeholder="Example: Customers call to book a dental appointment. The receptionist checks the calendar, writes the booking in our clinic software, and sends a WhatsApp reminder the day before." /></label>
         <button type="submit" className={styles.lightButton} disabled={state === "working"}>{state === "working" ? "Mapping…" : "Map it onto the four stations"}</button>
         {state === "error" && <p className={styles.formError} role="alert">{error}</p>}
       </form>
