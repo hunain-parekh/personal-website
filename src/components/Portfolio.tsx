@@ -35,7 +35,7 @@ export function Page({ children }: { children: React.ReactNode }) {
   return <div className={styles.portfolio}>
     <Reveal />
     <a className={styles.skip} href="#main">Skip to content</a>
-    <header className={styles.header}><a className={styles.wordmark} href="/" aria-label="Hunain Parekh home"><span className={styles.monogram}>hp.</span><span>Hunain Parekh<small>AI process automation engineer</small></span></a><nav aria-label="Main navigation"><Link href="/work">Case studies</Link><Link href="/approach">How I work</Link><Link href="/about">Journey</Link></nav><a className={styles.headerContact} href="/#contact">Let’s talk</a></header>
+    <header className={styles.header}><Link className={styles.wordmark} href="/" aria-label="Hunain Parekh home"><span className={styles.monogram}>hp.</span><span>Hunain Parekh<small>AI process automation engineer</small></span></Link><nav aria-label="Main navigation"><Link href="/work">Case studies</Link><Link href="/approach">How I work</Link><Link href="/about">Journey</Link></nav><a className={styles.headerContact} href="/#contact">Let’s talk</a></header>
     <main id="main">{children}</main><footer className={styles.footer}><span>© {new Date().getFullYear()} Hunain Parekh</span><div><a href="https://github.com/hunain-parekh" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/hunain-parekh" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="#main">Back to top</a></div></footer>
   </div>;
 }
